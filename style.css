@@ -63,6 +63,7 @@ gap: 3rem;
 .login1{
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   background-color: black;
   height: 25rem;
   width: 25rem;
@@ -88,7 +89,41 @@ gap: 3rem;
   border:  4px solid #a146b0;
 box-shadow:4px  4px 4px #a146b0 ;
 }
-
+@media(max-width:540px){
+  .full h1{
+    font-size: 4rem;
+  }
+  .login{
+    width: 17rem;
+  }
+  .login h3{
+    font-size: 3rem;
+  }
+  .login1{
+    width: 17rem;
+  }
+  
+}
+@media(max-width:320px){
+  .full h1{
+    font-size: 2.5rem;
+  }
+  .login{
+    width: 12rem;
+  }
+  .button{
+    width: 8rem;
+  }
+  .login h3{
+    font-size:1.5rem;
+  }
+.login1{
+  width:12rem ;
+}
+.login1 input{
+  width:10rem ;
+}
+}
 
 
 

@@ -18,3 +18,68 @@ nav span{
     font-family: 'Courgette', cursive;
     color:#a146b0 ;
 }
+body{
+    background-color:#E1BEE7;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 7rem;
+    flex-wrap: wrap;
+}
+#ques h2{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    font-size: 2rem;
+    font-family: 'Carter One';
+    margin: 1rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+.choice{
+    display: flex;
+    gap: 2rem;
+    background-color:#efe9e9;
+    height: 3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.option{
+    font-size: 2rem;
+    background-color: #a146b0;
+    color: black;
+    width:3rem ;
+    height: 3rem;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.value{
+   font-size: 1.5rem;
+   font-weight: 500;
+}
+#options{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+@media(max-width:400px){
+    nav span{
+        font-size: 1.8rem;
+    }
+    #ques h2{
+        font-size: 1rem;
+    }
+    .value{
+        font-size: 1rem;
+        }
+        
+    }
+    @media(max-width:250px){
+        nav span{
+            font-size: 1.2rem;
+        }}
