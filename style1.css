@@ -24,6 +24,9 @@ nav span{
 body{
     background-color:#E1BEE7;
 }
+/* .container{
+    display: flex;
+} */
 .container{
     display: flex;
     flex-direction: column;
@@ -43,7 +46,7 @@ body{
 }
 .choice{
     display: flex;
-    gap: 2rem;
+    /* gap: 2rem; */
     background-color:#efe9e9;
     height: 3rem;
     align-items: center;
@@ -64,10 +67,12 @@ body{
 .value{
    font-size: 1.5rem;
    font-weight: 500;
+   height: 100%;
    width: 100%;
    border: none;
    background-color:#efe9e9 ;
    text-align: left;
+  padding-left: 2rem;
 }
 #options{
     display: flex;
@@ -116,3 +121,24 @@ body{
         nav span{
             font-size: 1.2rem;
         }}
+.status{
+    position: relative;
+    background-color: #a146b0;
+    width: 15rem;
+   display: flex;
+flex-wrap: wrap;
+}
+.status span{
+    padding: 1rem;
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    border-radius:2rem ;
+    text-align: center;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}

@@ -10,14 +10,14 @@ end.addEventListener("click",() =>{
 function endtest(){
 end.click();
     }      
-const timeLimit = 5 *1000; 
+const timeLimit = 5*60*1000; 
 
 function starttime() {
      setTimeout(() => {
        endtest();
     }, timeLimit);
 }
-
+const value = document.getElementsByClassName("value");
 const choices = Array.from(document.getElementsByClassName("choice"));
 const question = document.getElementById("ques");
 const optionLabels = Array.from(document.querySelectorAll(".choice .option")); // Added option labels
@@ -28,32 +28,46 @@ let quesCount = 0;
 let availquest = [];
 let questions = [];
 let score = 0;
-const corr_point = 4;
-const incorr_point = -1;
-const unattemted = 0;
+const attempt = 0;
 const maxques = 12;
-const review = 0;
-document.getElementById("score").textContent = `Total Score: ${score}`
- document.getElementById("submit").addEventListener("click", () => {
-    accans = true;
-    
-    choices.forEach(choice =>{
-        choice.addEventListener("click",event =>{
-            if(!accans) return;
-            accans = false;
-            const selchoice = event.target;
-            const selans = selchoice.dataset["number"];
-      
-    if(selans==currques.answer){
-        score += 4;
+const unattempt = maxques;
+let review = 0;
+choices.forEach(choice => {
+    choice.addEventListener("click",event =>{
+    if(!accans) return;
+    accans = false;
+    const sel = event.target;
+    const selans = sel.dataset["number"];
+    if(selans == currques.answer){
+ sel.style.backgroundColor = "green";
+ score += 4;
     }
     else{
+        sel.style.backgroundColor = "red";
         score -= 1;
-    } 
-});document.getElementById("score").textContent = `Total Score: ${score}`
- })
-
+     }
+    setTimeout( () =>{
+        sel.style.backgroundColor ="#efe9e9"
+        newques()
+    },5000)
+    document.getElementById("score").textContent = score;
 })
+});
+
+
+
+// document.getElementById("score").textContent = `Total Score: ${score}`;
+// // score
+// const submit = document.getElementById("submit");
+// const reviewbutton = document.getElementById("review");
+// submit.addEventListener("click",()=> 
+// newques())
+// reviewbutton.addEventListener("click",() =>
+// newques(),
+// review++,
+
+// )
+// document.getElementById("reviewbutton").textContent = `Review: ${review}`;
 start = () => {
     score = 0;
     quesCount = 0;
@@ -74,6 +88,7 @@ newques = () => {
         option.textContent = currques["choosen" + (index +1)];
     });
     availquest.splice(quesindex, 1);
+    accans = true;
 } else {
     return window.location.assign("/end.html")
 }
