@@ -127,14 +127,7 @@ body{
    display: flex;
 flex-wrap: wrap;
 }
-.status span{
-    padding: 1rem;
-    background-color: white;
-    height: 2rem;
-    width: 2rem;
-    border-radius:2rem ;
-    text-align: center;
-}
+
 .green{
     background-color: green;
 }

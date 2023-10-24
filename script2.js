@@ -14,9 +14,9 @@ let quesCount = 0;
 let availquest = [];
 let questions = [];
 let score = 0;
-const attempt = 0;
+let attempt = 0;
 const maxques = 12;
-const unattempt = maxques;
+let unattempt = maxques;
 let review = 0;
 //choices and score
 let selchoice = null; 
@@ -27,7 +27,9 @@ choices.forEach(choice => {
         const sel = event.target;
         selchoice = sel;
         sel.style.backgroundColor = "blue"; 
-
+        setTimeout(() => {
+            selchoice.style.backgroundColor = "#efe9e9";
+                },2000 )
     });
 });
 document.getElementById("submit").addEventListener("click", () => {
@@ -48,11 +50,27 @@ newques()
         selectedChoice = null;
         document.getElementById("score").textContent = score;
         localStorage.setItem("score", score);
-        attempt++;
-        unattempt--;
+attempt++;
+unattempt--;
+        document.getElementById("attempt").textContent = `Attempted :${attempt} `
+    document.getElementById("unattempt").textContent = `Unattempted :${unattempt} `
     }
 );
-// const reviewbutton =
+// counts
+ const reviewbutton = document.getElementById("review")
+reviewbutton.addEventListener("click",() =>{
+review ++;
+unattempt --;
+document.getElementById("reviewbutton").textContent = `Marked for review :${review} `;
+setTimeout(() => {
+    newques()
+        },2000 )
+})
+
+
+   
+    
+    
 
 //end
 const end = document.getElementById("end");
@@ -63,7 +81,7 @@ end.addEventListener("click",() =>{
 function endtest(){
 end.click();
     }      
-const timeLimit = 5*1000; 
+const timeLimit = 5*60*1000; 
 
 function starttime() {
      setTimeout(() => {
