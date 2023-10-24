@@ -6,7 +6,7 @@
   }
 nav{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 5rem;
     background-color:#211f1f;
@@ -17,6 +17,9 @@ nav span{
     font-weight: 700;
     font-family: 'Courgette', cursive;
     color:#a146b0 ;
+}
+#welcome{
+    margin-left: 1.5rem;
 }
 body{
     background-color:#E1BEE7;
@@ -71,7 +74,7 @@ body{
     flex-direction: column;
     gap: 2rem;
 }
-#next{
+#next,#end{
     width:8rem;
     background-color: #a146b0;
     height: 3rem;
@@ -79,6 +82,7 @@ body{
     font-size: 1.5rem;
     border: 2px solid black;
     box-shadow: 2px 2px 2px black;
+    margin-right: 1.5rem;
 }
 #review,#submit{
     width: 9rem;

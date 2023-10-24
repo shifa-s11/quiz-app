@@ -2,24 +2,41 @@ const username = localStorage.getItem("username");
 if (username) {
     document.getElementById("username").textContent = username;
 }
+//end
+const end = document.getElementById("end");
+end.addEventListener("click",() =>{
+    return window.location.assign("/end.html")
+})
+function endtest(){
+end.click();
+    }      
+const timeLimit = 5 *1000; 
+
+function starttime() {
+     setTimeout(() => {
+       endtest();
+    }, timeLimit);
+}
 
 const choices = Array.from(document.getElementsByClassName("choice"));
 const question = document.getElementById("ques");
 const optionLabels = Array.from(document.querySelectorAll(".choice .option")); // Added option labels
 let currques = {};
 let accans = true;
-let score = 0;
+
 let quesCount = 0;
 let availquest = [];
 let questions = [];
-
+let score = 0;
 const corr_point = 4;
 const incorr_point = -1;
 const unattemted = 0;
 const maxques = 12;
 const review = 0;
-document.getElementById("submit").addEventListener("click", () => {
+document.getElementById("score").textContent = `Total Score: ${score}`
+ document.getElementById("submit").addEventListener("click", () => {
     accans = true;
+    
     choices.forEach(choice =>{
         choice.addEventListener("click",event =>{
             if(!accans) return;
@@ -33,7 +50,8 @@ document.getElementById("submit").addEventListener("click", () => {
     else{
         score -= 1;
     } 
-});document.getElementById("score").textContent = `Total Score: ${score}`;})
+});document.getElementById("score").textContent = `Total Score: ${score}`
+ })
 
 })
 start = () => {
@@ -61,7 +79,9 @@ newques = () => {
 }
 };
 document.getElementById("next").addEventListener("click",() =>
-newques())
+newques(),
+starttime())
+
 
 
 // fetch API
