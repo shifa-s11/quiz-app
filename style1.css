@@ -31,7 +31,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 3rem;
     flex-wrap: wrap;
 }
 #ques h2{
@@ -141,4 +140,11 @@ flex-wrap: wrap;
 }
 .red{
     background-color: red;
+}
+#scoretext{
+    font-size: 2rem;
+    font-family: 'Lilita One', sans-serif;
+color: #a146b0;
+margin:1rem 1rem ;
+
 }
