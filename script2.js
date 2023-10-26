@@ -32,6 +32,8 @@ choices.forEach(choice => {
                 },2000 )
     });
 });
+
+//submit
 document.getElementById("submit").addEventListener("click", () => {
      {
         const selans = selchoice.dataset["number"];
@@ -54,6 +56,8 @@ attempt++;
 unattempt--;
         document.getElementById("attempt").textContent = `Attempted :${attempt} `
     document.getElementById("unattempt").textContent = `Unattempted :${unattempt} `
+    const quesnum = document.querySelector(`[id="${quesCount}"]`);
+    quesnum.style.backgroundColor = "green";
     }
 );
 // counts
@@ -62,16 +66,12 @@ reviewbutton.addEventListener("click",() =>{
 review ++;
 unattempt --;
 document.getElementById("reviewbutton").textContent = `Marked for review :${review} `;
+const quesnum = document.querySelector(`[id="${quesCount}"]`);
+quesnum.style.backgroundColor = "purple";
 setTimeout(() => {
     newques()
         },2000 )
 })
-
-
-   
-    
-    
-
 //end
 const end = document.getElementById("end");
 end.addEventListener("click",() =>{
@@ -117,8 +117,25 @@ newques = () => {
 document.getElementById("next").addEventListener("click",() =>
 newques(),
 )
-starttime(),
+starttime();
 
+//timer
+let time = 5*60;
+const timer = document.getElementById("timer");
+function timedisp (){
+const min = Math.floor(time / 60);
+const sec = (time % 60);
+timer.textContent = `Time Left: 0${min}:${sec}`;
+}
+const timerInterval = setInterval(() => {
+    if (time <= 0) {
+       timer.textContent = "TIME'S UP"
+    } else {
+        time--;
+        timedisp();
+    }
+}, 1000);
+timedisp();
 
 
 // fetch API
@@ -140,7 +157,6 @@ fetch("https://opentdb.com/api.php?amount=20&category=21&difficulty=medium&type=
             for (let i = 1; i <= 4; i++) {
                 questdisp["choosen" + i] = choices[i - 1];
             }
-
             return questdisp;
         });
         start();
@@ -148,9 +164,27 @@ fetch("https://opentdb.com/api.php?amount=20&category=21&difficulty=medium&type=
     .catch(error => {
         console.error(error);
     });
+// STATUS
+const container = document.getElementById("container")
+const statbutton = document.getElementById("statbutton");
+const status1 = document.getElementById('status1');
+let show = true;
 
-
-
+function status2(){
+    if(show){
+        status1.style.display = "flex";
+        container.style.display = "grid";
+        show = false;
+    }
+    else{
+        container.style.display ="block"
+        status1.style.display = "none";
+        show = true;
+    }
+}
+statbutton.addEventListener("click",() =>{
+    status2()
+})
 
 
 

@@ -15,10 +15,13 @@
 <body>
     <nav>
         <span id="welcome">Welcome,<span id="username"></span></span>
+        <button class="" id="statbutton">Status</button>
         <button class="next" id="end">End</button>
     </nav>
-    <div class="container">
-        <p id="scoretext">SCORE : <span id="score"> 0</span></p>
+   <div id="header">
+    <p id="scoretext">SCORE : <span id="score"> 0</span></p>
+    <div id="timer">Time Left: 05:00</div></div>
+    <div class="container" id="container">
    <div class="content">
        <div id="ques">
         <h2><span id="quesno"></span></h2> 
@@ -37,7 +40,7 @@
         <div class="choice">
             <p class="option">D</p>
             <button class="value" data-number="4"></button></div>
-        </div>
+        
 <div class="buttons">
     <button id="review">Mark for review</button>
     <button id="submit">Submit</button>
@@ -45,14 +48,14 @@
         <div class="button">
         <button id="next" class="next">NEXT</button></div>
 </div>
-
- <div class="status">
-   <div><span id="attempt">Attempted:0</span></div>
-   <div><span id="unattempt">unattempted:12</span></div>
-   <div><span id="reviewbutton">Marked for review:0</span></div>
-<!--    
-   <span id="1">1</span><span id="2">2</span><span id="3">3</span><span id="4">4</span><span id="5">5</span><span id="6">6</span><span id="7">7</span><span id="8">8</span><span id="9">9</span><span id="10">10</span><span id="11">11</span><span id="12">12</span></div> -->
-
+   </div>
+ <div class="status" id="status1">
+   <div><span class="text" id="attempt">Attempted:0</span></div>
+   <div><span  class="text" id="unattempt">Unattempted:12</span></div>
+   <div><span class="text" id="reviewbutton">Marked for review:0</span></div>
+  <div class="progress" id="progress">
+   <span id="1">1</span><span id="2">2</span><span id="3">3</span><span id="4">4</span><span id="5">5</span><span id="6">6</span><span id="7">7</span><span id="8">8</span><span id="9">9</span><span id="10">10</span><span id="11">11</span><span id="12">12</span></div> 
+</div>
     </div>
 
 
