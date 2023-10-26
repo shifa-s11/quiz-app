@@ -102,7 +102,9 @@ box-shadow:4px  4px 4px #a146b0 ;
   .login1{
     width: 17rem;
   }
-  
+  .login1 input{
+    width:12rem ;
+  }
 }
 @media(max-width:320px){
   .full h1{
@@ -120,9 +122,7 @@ box-shadow:4px  4px 4px #a146b0 ;
 .login1{
   width:10rem ;
 }
-.login1 input{
-  width:10rem ;
-}
+
 }
 
 
