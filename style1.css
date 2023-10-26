@@ -102,7 +102,7 @@ body{
     justify-content: center;
     gap: 3rem;
 }
-@media(max-width:400px){
+@media(max-width:580px){
     nav span{
         font-size: 1.8rem;
     }
@@ -114,10 +114,7 @@ body{
         }
 
     }
-    @media(max-width:250px){
-        nav span{
-            font-size: 1.2rem;
-        }}
+  
 .status{
     position: relative;
     background-color: #211f1f;
@@ -166,4 +163,51 @@ margin:1rem 1rem ;
     margin-bottom: 1.3rem;
     font-family:'Carter One';
     color: white;
+}
+#statbutton{
+    border: none;
+    background-color: #a146b0;
+    color: black;
+    font-size: 0.8rem;
+    font-family: 'Carter One';
+    padding: 0.4rem;
+    margin-right:2rem ;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    /* border-radius: 2rem; */
+}
+@media(max-width:650px){
+    #next,#end{
+        height: 2rem;
+        width: 5rem;
+        font-size: 1.2rem;
+       
+    }
+    #review,#submit{
+       width: 6rem;
+       font-size: 0.7rem;
+       margin: 0.9rem;
+    }
+    #statbutton{
+        font-size: 0.8rem;
+        padding: 0.2rem;
+        margin-right: 0.8rem;
+    }
+}
+@media(max-width:450px){
+    nav span{
+        font-size: 1.2rem;
+        margin-left: 0.2rem;
+    }
+    nav{
+        gap: 1rem;
+    }
+    #scoretext,#timer{
+        font-size: 0.9rem;
+    }
+    #next,#end{
+        width: 3rem;
+        font-size: 1rem;
+        margin-top: 0.3rem;
+    }
 }
