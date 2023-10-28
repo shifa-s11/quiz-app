@@ -124,6 +124,12 @@ box-shadow:4px  4px 4px #a146b0 ;
 }
 
 }
-
+#List li{
+  font-size: 2rem;
+  color: white;
+  font-family: 'Courgette', cursive;
+  list-style: none;
+  padding: 1rem;
+}
 
 

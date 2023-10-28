@@ -24,7 +24,7 @@
     <script>
         const name = document.getElementById("user");
 const login = document.getElementById("login");
-login.addEventListener("click",() => {
+function Login(){
     const username = name.value;
     if(username.trim()!==""){
         localStorage.setItem("username",username);
@@ -33,7 +33,16 @@ login.addEventListener("click",() => {
     else{
         alert("Please enter your name");
     }
-})
+}
+name.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+          console.log("Enter key pressed"); 
+          event.preventDefault();
+        Login();
+    }
+});
+login.addEventListener("click", Login);
+
     </script>
     </body>
     </html> 

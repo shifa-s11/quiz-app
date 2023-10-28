@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizz Buzz</title>
+    <title>QUIZZ BUZZ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,26 +12,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
+<body>
+    <div class="full">
+        <div class="login">
+        <h3>High Scores</h3>
+    <ul id="List"></ul>
+    </div></div>
+    <script>
+         const List = document.getElementById("List");
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-<body><div class="full">
-   <div class="head"> <h1>Quizz Buzz</h1></div>
-   <div class="login">
-<h3>Let's Play</h3>
-<button class="button" id="play" >PLAY</button>
-<button class="button" id="high">HIGH SCORES</button>
-   </div> 
-</div>
-<script >
-    document.getElementById("play").onclick = function(){
-    window.location.href = "login.html"
+if (highScores.length === 0) {
+    highScoresList.innerHTML = "No high scores available.";
+} else {
+    highScores.forEach(player => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${player.name}: ${player.score}`;
+        List.appendChild(listItem);
+    });
 }
-// highscore
-const high = document.getElementById("high");
-high.addEventListener("click",() =>{
-    window.location.href = "highscore.html"
-})
-
-
 </script>
 </body>
 </html>
