@@ -73,6 +73,7 @@ setTimeout(() => {
 //end
 const end = document.getElementById("end");
 end.addEventListener("click",() =>{
+    clearInterval(timerInterval);
     addScore(username, score);
     return window.location.assign("end.html")
 })
@@ -168,9 +169,6 @@ statbutton.addEventListener("click",() =>{
         icon.style.display = "none"
         statbutton.style.display = "block" 
     })
-   
-
-
 // high Scores
 function save(highScores) {
     localStorage.setItem("highScores", JSON.stringify(highScores));
@@ -182,8 +180,15 @@ function addScore(username, score) {
     highScores.splice(3);
     save(highScores);
 }
-// hover
+// navigate
 const progress = document.getElementById("progress");
+for (let i = 1; i <= 12; i++) {
+    let span = document.createElement("span");
+    span.id = i;
+    span.className = "span";
+    span.textContent = i;
+    progress.appendChild(span);
+}
 const Spans = Array.from(progress.querySelectorAll(".span"));
 Spans.forEach((span, index) => {
   span.addEventListener("click", () => {
@@ -230,9 +235,11 @@ fetch("https://opentdb.com/api.php?amount=20&category=21&difficulty=medium&type=
                 timedisp();
             }
         }, 1000);
+
     }
     )
     .catch(error => {
         console.error(error);
     });})
-//   hover
+
+  
