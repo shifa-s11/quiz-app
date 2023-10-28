@@ -114,13 +114,15 @@ newques = () => {
         option.textContent = currques["choosen" + (index +1)];
     });
     availquest.splice(quesindex, 1);
-    accans = true;}
-   else if(quesCount==maxques-1){
-next.style.display = "none";
-   }
+    accans = true;
+    if(quesCount==maxques){
+        next.style.display = "none";
+    }
+}
 else {
     return window.location.assign("end.html")
 }
+
 };
 
 
@@ -151,23 +153,24 @@ setTimeout(() =>{
 const container = document.getElementById("container")
 const statbutton = document.getElementById("statbutton");
 const status1 = document.getElementById('status1');
+const icon = document.getElementById("icon");
 let show = true;
 
-function status2(){
-    if(show){
+statbutton.addEventListener("click",() =>{
         status1.style.display = "flex";
         container.style.display = "grid";
-        show = false;
-    }
-    else{
+        icon.style.display = "block"
+        statbutton.style.display = "none"
+    })
+    icon.addEventListener("click",() =>{
         container.style.display ="block"
         status1.style.display = "none";
-        show = true;
-    }
-}
-statbutton.addEventListener("click",() =>{
-    status2()
-})
+        icon.style.display = "none"
+        statbutton.style.display = "block" 
+    })
+   
+
+
 // high Scores
 function save(highScores) {
     localStorage.setItem("highScores", JSON.stringify(highScores));
@@ -179,6 +182,17 @@ function addScore(username, score) {
     highScores.splice(3);
     save(highScores);
 }
+// hover
+const progress = document.getElementById("progress");
+const Spans = Array.from(progress.querySelectorAll(".span"));
+Spans.forEach((span, index) => {
+  span.addEventListener("click", () => {
+    if (index < questions.length) {
+      quesCount = index;
+      newques();
+    }
+  });
+});
 // fetch API
 document.addEventListener("DOMContentLoaded", function () {
     const loader = document.getElementById("loader");
@@ -221,4 +235,4 @@ fetch("https://opentdb.com/api.php?amount=20&category=21&difficulty=medium&type=
     .catch(error => {
         console.error(error);
     });})
-  
+//   hover
