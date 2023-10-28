@@ -14,9 +14,10 @@
 </head>
 <body>
     <div class="full">
-        <div class="login">
+        <div class="login" style="gap: 1rem;">
         <h3>High Scores</h3>
     <ul id="List"></ul>
+    <button class="button" id="home">Home</button>
     </div></div>
     <script>
          const List = document.getElementById("List");
@@ -31,6 +32,10 @@ if (highScores.length === 0) {
         List.appendChild(listItem);
     });
 }
+const home = document.getElementById("home");
+home.addEventListener("click",() => {
+    return window.location.href = "index.html"
+})
 </script>
 </body>
 </html>

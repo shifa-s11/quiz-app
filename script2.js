@@ -18,10 +18,11 @@ const maxques = 12;
 let unattempt = maxques;
 let review = 0;
 //choices and score
+let selectedChoices = {};
 let selchoice = null; 
 choices.forEach(choice => { 
     choice.addEventListener("click", event => {
-        if (!accans) return;
+        if (!accans || selectedChoices[quesCount]) return;
         if (selchoice) {
             selchoice.style.backgroundColor = "#efe9e9";
         }
@@ -73,7 +74,6 @@ setTimeout(() => {
 //end
 const end = document.getElementById("end");
 end.addEventListener("click",() =>{
-    clearInterval(timerInterval);
     addScore(username, score);
     return window.location.assign("end.html")
 })
