@@ -18,11 +18,10 @@ const maxques = 12;
 let unattempt = maxques;
 let review = 0;
 //choices and score
-let selectedChoices = {};
 let selchoice = null; 
 choices.forEach(choice => { 
     choice.addEventListener("click", event => {
-        if (!accans || selectedChoices[quesCount]) return;
+        if (!accans) return;
         if (selchoice) {
             selchoice.style.backgroundColor = "#efe9e9";
         }
